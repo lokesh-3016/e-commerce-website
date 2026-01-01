@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIZHA TECH | Premium Electronics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="top-nav">
+        <div class="logo">Lokesh<span>Tech</span></div>
+        <div class="search-wrap">
+            <input type="text" id="global-search" placeholder="Search for Gadgets..." onkeyup="liveSearch()">
+        </div>
+    </div>
+</header>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div id="detail-modal" class="modal-overlay">
+    <div class="modal-content spec-box">
+        <div class="spec-grid">
+            <div id="spec-img-wrap"></div>
+            <div class="spec-info">
+                <h2 id="spec-name"></h2>
+                <p id="spec-desc" class="description"></p>
+                <ul id="spec-list"></ul>
+                <h3 id="spec-price"></h3>
+                <button class="buy-btn" onclick="openOrderModal()">BUY THIS PRODUCT NOW</button>
+            </div>
+        </div>
+        <button class="close-btn" onclick="closeModal('detail-modal')">✕ Close</button>
+    </div>
+</div>
+
+<!-- ORDER MODAL -->
+<div id="order-modal" class="modal-overlay">
+    <div class="modal-content">
+        <h3>Complete Your Purchase</h3>
+        <p id="order-summary-text"></p>
+        <div class="form-group">
+            <input type="text" id="cust-name" placeholder="Your Full Name">
+            <input type="text" id="cust-phone" placeholder="Mobile Number">
+            <textarea id="cust-address" placeholder="Complete Shipping Address"></textarea>
+            <select id="cust-payment">
+                <option>UPI</option>
+                <option>Cash on Delivery</option>
+                <option>Credit Card</option>
+            </select>
+        </div>
+        <button class="confirm-btn" onclick="finalizeOrder()">Confirm Order</button>
+        <button class="close-btn" onclick="closeModal('order-modal')">Cancel</button>
+    </div>
+</div>
+
+<main class="container">
+    <div id="main-grid" class="product-grid"></div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
